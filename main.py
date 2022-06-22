@@ -55,3 +55,4 @@ if __name__ == '__main__':
     path = input('Асолютный путь к файлу, который вам нужен: ').replace('\\', '/')
     seconds_wait = int(input('Интервал между сбором статистики: '))
     analyzer = Statistic(path, seconds_wait)
+    analyzer.analyze()
