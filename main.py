@@ -17,7 +17,7 @@ class Statistic:
         for process in processes[1:-1]:
             old_processes.append(process)
         os.startfile(file)  # Запускает программу
-        time.sleep(2)  # Для браузеров и подобных процессов, которые получают ID не сразу после запуска
+        time.sleep(1)  # Для браузеров и подобных процессов, которые получают ID не сразу после запуска
         processes = subprocess.check_output('tasklist', text=True).split('\n')  # NOQA, делает тоже самое, что и перед этим, но уже с новым процессом
         for process in processes[1:-1]:
             new_processes.append(process)
