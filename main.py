@@ -24,8 +24,10 @@ class Statistic:
         for i in range(len(new_processes)):
             # Ищу разницу между списков процессов
             if i < len(old_processes):
-                if old_processes[i].split()[1] != new_processes[i].split()[1]:
-                    self.process, self.PID = new_processes[i].split()[:2]
+                new_task = new_processes[i].split()
+                if old_processes[i].split()[1] != new_task[1] and new_task[0] != 'tasklist.exe':
+                    self.process, self.PID = new_task[:2]
+                    print(self.process)
                     break
 
     def analyze(self):
